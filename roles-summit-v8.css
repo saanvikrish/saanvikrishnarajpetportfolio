@@ -1,0 +1,23 @@
+/* V8: Summit chapter takes the viewport as its own visual chapter. */
+body.theme-clac .lan-chapter{padding:0!important;width:100%;max-width:none;scroll-margin-top:0!important;position:relative;isolation:isolate;background:#203e36;color:#f8f4e8}
+body.theme-clac .lan-opening{min-height:100vh!important;min-height:100svh!important;width:100%;padding:clamp(92px,11vh,135px) max(5vw,calc((100vw - 1200px)/2)) 45px!important;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(20px,4vw,70px);align-items:center;align-content:center}
+body.theme-clac .lan-opening-copy{max-width:850px}body.theme-clac .lan-opening-poster{max-width:420px;display:block}body.theme-clac .lan-opening-poster img{max-height:66svh;object-fit:contain}
+body.theme-clac .summit-lead-role{font-size:11px;letter-spacing:.13em;line-height:1.5;margin:0 0 12px;color:#d8e8ba;font-weight:700}
+body.theme-clac .lan-title{margin-top:10px}body.theme-clac .lan-opening .lan-title h2{font-size:clamp(52px,7vw,112px)!important;line-height:.94!important}
+body.theme-clac .summit-jump{min-height:90px}
+@media(max-width:760px){body.theme-clac .lan-opening{grid-template-columns:1fr;padding:92px 6vw 35px!important;gap:12px;align-content:center}body.theme-clac .lan-opening-poster{display:block;max-width:170px;justify-self:end}body.theme-clac .lan-opening-poster img{max-height:22svh}body.theme-clac .lan-opening .lan-title h2{font-size:clamp(46px,11vw,76px)!important}body.theme-clac .lan-intro p{font-size:13px}}
+/* Roles: editorial card rail with visible progression and playful stagger. */
+.portfolio-home #roles{overflow:hidden}.portfolio-home #roles .roles-heading{max-width:880px}.portfolio-home #roles .rail-tools{margin:25px 0 18px}.portfolio-home #roles .rail-tools>p{font-size:13px;font-weight:600}
+.portfolio-home #roles .rail-tools button{width:48px;height:48px;border-radius:50%;border:1px solid #203e36;background:#203e36;color:#f5f1e8;transition:transform .2s,background .2s}
+.portfolio-home #roles .rail-tools button:hover:not(:disabled){transform:scale(1.09);background:#b83f2c}.portfolio-home #roles .rail-tools button:disabled{opacity:.3}
+.portfolio-home #roles .roles-grid{display:flex!important;overflow-x:auto!important;overflow-y:hidden;gap:18px;scroll-snap-type:x mandatory;scroll-padding-inline:8px;padding:14px 5px 36px;scrollbar-width:thin;scrollbar-color:#b83f2c #dfe7db}
+.portfolio-home #roles .role-card{position:relative;flex:0 0 clamp(260px,31vw,370px)!important;min-height:330px!important;margin:0!important;padding:27px 26px 30px!important;border:1px solid #203e3650!important;border-radius:12px!important;box-shadow:5px 7px 0 #203e3614!important;background:#f9f7ed!important;color:#203e36!important;scroll-snap-align:start;transform:none!important;opacity:1!important;transition:translate .2s,box-shadow .2s}
+.portfolio-home #roles .role-card:nth-child(3n+2){background:#e2e8da!important}.portfolio-home #roles .role-card:nth-child(3n){background:#f3e8dc!important}
+.portfolio-home #roles .role-card:hover{translate:0 -6px;box-shadow:6px 12px 0 #203e3622!important}
+.portfolio-home #roles .role-card:before{content:counter(role,decimal-leading-zero) ' / CURRENT ROLE';counter-increment:role;display:block;font-size:10px;letter-spacing:.15em;color:#b83f2c;font-weight:800;margin-bottom:32px}
+.portfolio-home #roles .roles-grid{counter-reset:role}.portfolio-home #roles .role-card>span{display:block;font-size:11px!important;letter-spacing:.06em;text-transform:uppercase;min-height:0!important;color:#586b5f!important}
+.portfolio-home #roles .role-card h3{font-size:clamp(27px,2.6vw,35px)!important;line-height:1.08!important;margin:12px 0 17px!important;letter-spacing:-.02em!important}
+.portfolio-home #roles .role-card p{font-size:13px!important;line-height:1.7!important;margin:0}.portfolio-home #roles .role-card a{text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.portfolio-home .contact-card em{text-transform:none!important}
+@media(max-width:700px){.portfolio-home #roles .role-card{flex-basis:min(82vw,330px)!important;min-height:320px!important}.portfolio-home #roles .roles-grid{gap:15px}}
+@media(prefers-reduced-motion:reduce){.portfolio-home #roles .role-card,.portfolio-home #roles .rail-tools button{transition:none}}

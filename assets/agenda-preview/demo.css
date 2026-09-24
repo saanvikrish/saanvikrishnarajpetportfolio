@@ -1,0 +1,4 @@
+html { scroll-behavior: auto !important; scrollbar-width: none; }
+::-webkit-scrollbar { display: none; }
+html, body { overscroll-behavior-y: contain; }
+.shell { box-shadow: none; }

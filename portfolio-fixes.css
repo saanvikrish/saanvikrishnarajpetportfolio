@@ -1,0 +1,7 @@
+/* v5: restrained homepage flourishes; retain existing green/coral palette. */
+.portfolio-home .hero .swirl-mark{display:block;position:absolute;pointer-events:none;z-index:0;opacity:.22;filter:none;}
+.portfolio-home .hero .swirl-one{width:170px;height:170px;left:1%;top:16%;}
+.portfolio-home .hero .swirl-two{width:130px;height:130px;right:3%;bottom:12%;}
+.portfolio-home .hero .hero-copy,.portfolio-home .hero .photo-stage{position:relative;z-index:1;}
+@media(max-width:760px){.portfolio-home .hero .swirl-mark{opacity:.12}.portfolio-home .hero .swirl-one{width:100px;height:100px;left:-25px;top:12%}.portfolio-home .hero .swirl-two{width:90px;height:90px;right:-20px;bottom:4%}}
+@media(prefers-reduced-motion:reduce){.portfolio-home .hero .swirl-mark{animation:none!important}}

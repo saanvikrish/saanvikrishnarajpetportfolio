@@ -1,0 +1,48 @@
+/* Chapter labels belong above the story, not in a permanent empty column. */
+body.theme-amazon .case-story-section {
+  display: block; width: min(1160px, calc(100% - 48px));
+  padding: 56px 0; margin: 0 auto; border-radius: 0;
+}
+body.theme-amazon .case-story-label { margin: 0 0 22px; font-size: 14px; letter-spacing: 0; }
+body.theme-amazon .case-story-section h2 { max-width: 860px; font-size: 38px !important; line-height: 1.15 !important; letter-spacing: 0 !important; text-transform: none; }
+body.theme-amazon .case-story-section p,
+body.theme-amazon .reflection-panel p,
+body.theme-amazon .editorial-interlude p { font-size: 19px !important; line-height: 1.7 !important; font-weight: 500; max-width: 72ch; }
+body.theme-amazon .project-summary { font-size: 21px !important; line-height: 1.65 !important; }
+body.theme-amazon .case-story-section :is(article p, article span, figcaption) { font-size: 17px !important; line-height: 1.65 !important; }
+body.theme-amazon #context > div:nth-child(2) { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+body.theme-amazon #context h2 { grid-row: span 2; }
+body.theme-amazon #context p { margin: 0 0 20px; }
+body.theme-amazon #research .stat-row { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; border-block: 1px solid var(--project-line); padding-block: 24px; }
+body.theme-amazon #research .stat-row > span { font-size: 16px; line-height: 1.5; }
+body.theme-amazon #research .stat-row strong { font-size: 40px; }
+body.theme-amazon .research-implications { gap: 24px; }
+body.theme-amazon .research-implications article { background: transparent; border: 0; border-top: 2px solid var(--accent); border-radius: 0; padding: 20px 0 0; }
+body.theme-amazon #persona { background: var(--project-tint); padding: 36px; margin-block: 24px; }
+body.theme-amazon #persona > div:nth-child(2) { display: block; }
+body.theme-amazon #persona > div:nth-child(2) > div { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px 40px; }
+body.theme-amazon #persona h2 { font-size: 34px !important; }
+body.theme-amazon #persona p { margin-top: 0; }
+body.theme-amazon #persona .persona-notes { grid-column: 2; grid-row: 1 / span 2; display: grid; grid-template-columns: 1fr; margin: 0; }
+body.theme-amazon #persona .persona-notes article { padding: 0 0 20px; border: 0; border-bottom: 1px solid var(--project-line); border-radius: 0; }
+body.theme-amazon .case-process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+body.theme-amazon .case-process-grid article { display: block; border: 0; border-top: 2px solid var(--accent); background: transparent; border-radius: 0; padding: 24px 0; }
+body.theme-amazon .case-process-grid h3 { font-size: 27px; }
+body.theme-amazon .dark-case { padding: 36px; background: var(--ink); color: var(--paper); }
+body.theme-amazon .dark-case :is(h2,h3,p,.case-story-label) { color: var(--paper); }
+body.theme-amazon .dark-case :is(.insight-grid,.principles-grid) { gap: 28px; }
+body.theme-amazon .dark-case :is(.insight-grid,.principles-grid) article { background: transparent; color: var(--paper); border: 0; border-top: 1px solid #ffffff55; border-radius: 0; padding: 20px 0 0; }
+body.theme-amazon .dark-case article strong { color: var(--project-bright); }
+body.theme-amazon #prototype > div:nth-child(2) { width: 100%; }
+body.theme-amazon #prototype .figma-player { width: 100%; }
+@media(max-width:760px) {
+  body.theme-amazon .case-story-section { width: calc(100% - 36px); padding-block: 36px; }
+  body.theme-amazon #context > div:nth-child(2), body.theme-amazon #persona > div:nth-child(2) > div { display: block; }
+  body.theme-amazon #context h2 { margin-bottom: 24px; }
+  body.theme-amazon #persona .persona-notes { margin-top: 24px; }
+  body.theme-amazon :is(#persona,.dark-case) { padding: 26px 20px; }
+  body.theme-amazon .case-story-section h2, body.theme-amazon #persona h2 { font-size: 30px !important; }
+  body.theme-amazon .case-story-section p, body.theme-amazon .reflection-panel p, body.theme-amazon .editorial-interlude p { font-size: 18px !important; }
+  body.theme-amazon #research .stat-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.theme-amazon .case-process-grid { grid-template-columns: 1fr; }
+}

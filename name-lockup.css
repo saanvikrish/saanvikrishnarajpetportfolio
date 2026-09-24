@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Billa Mount';
+  src: url('assets/fonts/billa-mount/BillaMount-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.portfolio-home .hero-copy { min-width: 0; }
+.portfolio-home .hero h1 { width: 100%; max-width: none; margin: 20px 0 28px; padding: 0 0 8px; letter-spacing: 0; overflow: visible; }
+.portfolio-home .hero h1 .name-first {
+  display: block; font-family: 'DM Sans', sans-serif; font-weight: 900;
+  font-size: 124px; line-height: 1; letter-spacing: 0; color: #173c32;
+  text-transform: uppercase; white-space: nowrap;
+  text-shadow: 2px 2px 0 #edf0e8, 4px 4px 0 #bdcbb9;
+}
+.portfolio-home .hero h1 span {
+  display: block; position: relative; z-index: 1;
+  font-family: 'Billa Mount', cursive !important; font-size: 108px;
+  font-weight: 400; font-style: normal; line-height: 1.1; letter-spacing: 0;
+  width: auto; max-width: none; margin: -14px 0 0 10px; padding: 0 12px 10px 0;
+  color: #cf4936; transform: rotate(-5deg); transform-origin: 30% 50%;
+  text-transform: none; -webkit-text-stroke: 3px #edf0e8; paint-order: stroke fill;
+  text-shadow: 2px 3px 0 #203e36; white-space: nowrap;
+}
+@media(max-width:1100px) {
+  .portfolio-home .hero h1 .name-first { font-size: 106px; }
+  .portfolio-home .hero h1 span { font-size: 92px; }
+}
+@media(max-width:600px) {
+  .portfolio-home .hero h1 { margin: 18px 0 22px; }
+  .portfolio-home .hero h1 .name-first { font-size: 90px; }
+  .portfolio-home .hero h1 span { font-size: 76px; margin-top: -8px; margin-left: 4px; -webkit-text-stroke-width: 2px; }
+}

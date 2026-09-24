@@ -1,0 +1,1 @@
+(()=>{const button=document.querySelector('.motion-toggle');button?.addEventListener('click',()=>{const paused=document.body.classList.toggle('motion-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Resume decorative motion':'Pause decorative motion'})})();
