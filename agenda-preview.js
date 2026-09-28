@@ -16,7 +16,7 @@
   };
   const resize = () => { frame.style.transform = `scale(${windowElement.clientWidth / 390})`; };
   new ResizeObserver(resize).observe(windowElement);
-  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: 0.15 }).observe(preview);
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: 0.05 }).observe(preview.closest('.lan-opening') || preview);
   button.addEventListener('click', () => { paused = !paused; sync(); });
   motion.addEventListener('change', () => { paused = motion.matches; sync(); });
   document.addEventListener('visibilitychange', sync);

@@ -1,0 +1,114 @@
+/* Final, scoped corrections for the contact and case-study layouts. */
+.portfolio-home .contact-copy h2 {
+  font-family: 'Billa Mount', cursive !important;
+  font-size: 80px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+  padding-block: 12px;
+}
+body.theme-clac .community-deck > div { gap: 14px; }
+body.theme-clac .community-deck a {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 58px; padding: 16px 22px; border: 1px solid #21473f;
+  border-radius: 6px; background: #21473f; color: #fff6ed;
+  font-size: 18px; line-height: 1.4; text-align: center; text-decoration: none;
+}
+body.theme-clac .community-deck a + a { background: #efb9a7; color: #173f37; }
+body.theme-clac .community-deck a:hover { box-shadow: 0 3px 0 #b64b38; }
+body.theme-clac .community-deck a:focus-visible { outline: 3px solid #b64b38; outline-offset: 4px; }
+body.theme-amazon .amazon-unboxed .device-card:nth-child(n) {
+  background: transparent !important; border: 0; box-shadow: none;
+}
+body.theme-amazon #hifi > .case-story-label {
+  display: block; position: static; margin: 0 0 24px !important; transform: none;
+}
+body.theme-amazon #hifi h2 { margin-top: 0; }
+body.theme-amazon #hifi .amazon-catalogue figcaption {
+  color: #203e36;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0;
+}
+body.theme-amazon #hifi .amazon-catalogue figcaption strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #963c2d;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+body.theme-amazon .editorial-interlude.reverse {
+  grid-template-columns: minmax(180px, .65fr) minmax(0, 1fr);
+  align-items: center; gap: 36px; min-height: 0;
+}
+body.theme-amazon .editorial-interlude.reverse img {
+  height: 230px; object-fit: cover; object-position: center bottom;
+  transform: scaleX(-1) rotate(-18deg);
+  align-self: center;
+}
+body.theme-clac .lan-posters {
+  max-width: 920px; margin: 48px auto; gap: 40px; align-items: start;
+}
+body.theme-clac .lan-posters figure:nth-child(n) {
+  padding: 16px; margin: 0; transform: none; min-width: 0;
+}
+body.theme-clac .lan-posters img {
+  width: 100%; height: 430px; object-fit: contain;
+}
+body.theme-clac .lan-posters figcaption { font-size: 16px; line-height: 1.5; padding-top: 14px; }
+body.theme-clac #summit-program {
+  background: #f3eee6; color: #203e36;
+  padding: 64px max(24px, calc((100% - 1120px) / 2));
+}
+body.theme-clac #summit-program > h2 {
+  font-size: 42px; line-height: 1.15; max-width: 780px; margin: 18px 0 24px;
+}
+body.theme-clac #summit-program .summit-program-intro { max-width: 780px; font-size: 20px; line-height: 1.65; }
+body.theme-clac .summit-timeline-title { font-size: 26px; margin-top: 44px; }
+body.theme-clac #summit-program .summit-schedule {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 28px; margin: 24px 0 40px; background: none; border: 0;
+}
+body.theme-clac #summit-program .summit-schedule article {
+  background: transparent; min-height: 0; border-top: 2px solid #bd563f;
+  padding: 22px 0 28px; transform: none;
+}
+body.theme-clac #summit-program .summit-schedule span { color: #9b3c2b; letter-spacing: 0; font-size: 14px; }
+body.theme-clac #summit-program .summit-schedule h3 { font-size: 23px; line-height: 1.25; margin: 12px 0; }
+body.theme-clac #summit-program .summit-schedule p { font-size: 17px; line-height: 1.6; }
+body.theme-clac #summit-program .summit-program-grid { display: block; margin: 0; }
+body.theme-clac #summit-program details {
+  background: #21473f; color: #fff6ed; border: 0;
+  border-bottom: 1px solid #789488; padding: 0; margin: 0;
+}
+body.theme-clac #summit-program details:nth-child(2) { background: #efb9a7; color: #173f37; }
+body.theme-clac #summit-program summary {
+  cursor: pointer; padding: 24px; font-size: 22px; font-weight: 700; line-height: 1.4;
+}
+body.theme-clac #summit-program details > div { padding: 0 24px 28px; max-width: 880px; }
+body.theme-clac #summit-program details p { color: inherit; font-size: 18px; line-height: 1.65; }
+body.theme-clac #summit-program details h3 { color: inherit; font-size: 26px; }
+body.theme-clac #summit-program details .eyebrow { color: inherit; }
+body.theme-clac #summit-program .summit-topic-list span { color: inherit; border-color: #91a69c; letter-spacing: 0; }
+body.theme-clac #summit-program > .program-note { font-size: 14px; line-height: 1.6; margin-top: 24px; max-width: 800px; }
+@media(max-width:760px) {
+  .portfolio-home .contact-copy h2 { font-size: 52px !important; }
+  body.theme-clac .lan-posters { gap: 24px; }
+  body.theme-clac .lan-posters img { height: 340px; }
+  body.theme-clac #summit-program > h2 { font-size: 32px; }
+  body.theme-clac #summit-program .summit-schedule { grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  body.theme-amazon .editorial-interlude.reverse { grid-template-columns: 1fr; gap: 0; }
+  body.theme-amazon .editorial-interlude.reverse .editorial-interlude-copy { order: 2; }
+  body.theme-amazon .editorial-interlude.reverse img { order: 1; height: 180px; transform: rotate(160deg); }
+}
+@media(max-width:480px) {
+  body.theme-clac #summit-program .summit-schedule { grid-template-columns: 1fr; }
+  body.theme-clac #summit-program summary { padding: 20px; font-size: 20px; }
+}
