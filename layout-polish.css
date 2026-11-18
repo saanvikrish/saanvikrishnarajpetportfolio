@@ -1,3 +1,50 @@
+/* A quiet editorial divider instead of a second moving focal point. */
+.portfolio-home .practice-strip { padding: 26px 24px; border: 0; background: #edf0e8; }
+.portfolio-home .ticker-window { overflow: visible; }
+.portfolio-home .ticker-track { display: block; width: 100%; transform: none !important; animation: none !important; }
+.portfolio-home .ticker-group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 24px; width: 100%; max-width: 960px; margin: auto; padding: 0; }
+.portfolio-home .ticker-group[aria-hidden], .portfolio-home .ticker-group b { display: none !important; }
+.portfolio-home .ticker-group span { font-size: 14px !important; line-height: 1.5; font-weight: 500 !important; color: #4c6159; letter-spacing: 0; white-space: normal; }
+.portfolio-home .practice-phrase { display: grid; justify-items: center; gap: 2px; text-align: center; min-width: 0; }
+.portfolio-home .practice-phrase small { font: 500 12px/1.5 'DM Sans', sans-serif; letter-spacing: 0; }
+.portfolio-home .practice-phrase em { color: #203e36; font: 500 34px/1.15 'Cormorant Garamond', serif; font-family: 'Cormorant Garamond', serif !important; letter-spacing: 0; }
+.portfolio-home .practice-phrase:nth-child(2) em { font-style: italic; }
+.portfolio-home .practice-phrase:nth-child(3) em { font-family: 'Billa Mount', cursive !important; font-weight: 400; }
+@media(max-width:600px) {
+  .portfolio-home .practice-strip { padding: 24px 16px; }
+  .portfolio-home .ticker-group { gap: 18px; grid-template-columns: 1fr; }
+  .portfolio-home .practice-phrase { display: flex; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .portfolio-home .practice-phrase em { font-size: 28px; }
+}
+/* Project navigation is visible without requiring hover. */
+.portfolio-home .case-study-card[data-card-href] { cursor: pointer; }
+.portfolio-home :is(.case-cover, .archive-cover) .zine-bottom b {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%;
+  background: #173f37; color: #fff6ed; border: 1px solid #173f37;
+  font-size: 24px; line-height: 1;
+}
+.portfolio-home .media-card > div > a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 10px 16px; margin: 8px 8px 0 0;
+  border: 1px solid #173f37; border-radius: 6px; background: #173f37;
+  color: #fff6ed; font-weight: 700; text-decoration: none;
+}
+.portfolio-home .project-links a[href^="projects/"] {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 12px 20px; border-radius: 6px;
+  background: #efb9a7; color: #173f37; border: 2px solid #efb9a7;
+  font-size: 16px; font-weight: 800; line-height: 1.4; text-align: center;
+  text-decoration: none;
+}
+.portfolio-home .case-study-card h3,
+.portfolio-home .case-study-card:hover h3,
+.portfolio-home .case-study-card:focus-within h3 { color: #edf0e8 !important; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.portfolio-home .case-study-card:hover h3 { text-decoration-thickness: 3px; }
+.portfolio-home .case-study-card:focus-visible,
+.portfolio-home .project-links a:focus-visible,
+.portfolio-home .case-cover:focus-visible { outline: 3px solid #efb9a7; outline-offset: 5px; }
+.portfolio-home .project-links a[href^="projects/"]:hover { background: #fff6ed; border-color: #fff6ed; color: #173f37; }
 /* Final, scoped corrections for the contact and case-study layouts. */
 .portfolio-home .contact-copy h2 {
   font-family: 'Billa Mount', cursive !important;

@@ -4,7 +4,7 @@
   let last = 0;
   let animation = 0;
   let interacted = false;
-  const shell = document.querySelector('.shell');
+  const shell = document.querySelector('main');
   const pauseForInteraction = () => {
     playing = false;
     interacted = true;
@@ -15,11 +15,14 @@
   for (const type of ['pointerdown', 'touchstart', 'wheel', 'keydown']) {
     document.addEventListener(type, pauseForInteraction, { passive: true, capture: true });
   }
-  const position = id => Math.max(0, document.getElementById(id).getBoundingClientRect().top + scrollY - 68);
+  const position = id => {
+    const section = document.getElementById(id);
+    return section ? Math.max(0, section.getBoundingClientRect().top + scrollY - 68) : 0;
+  };
   const ease = t => t * t * (3 - 2 * t);
   const render = () => {
     const t = elapsed % 26000;
-    const schedule = position('schedule');
+    const schedule = position('agenda');
     const sessions = position('sessions');
     let y = 0;
     let opacity = 1;
@@ -45,8 +48,8 @@
     if (playing && interacted) {
       elapsed = 0;
       interacted = false;
-      document.querySelector('.modal.is-open .modal-close')?.click();
-      document.querySelector('.menu-button[aria-expanded="true"]')?.click();
+      document.querySelector('.modal.open .close')?.click();
+      document.querySelector('.menu-toggle[aria-expanded="true"]')?.click();
     }
     cancelAnimationFrame(animation);
     last = 0;

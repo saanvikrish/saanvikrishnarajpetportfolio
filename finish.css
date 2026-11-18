@@ -495,6 +495,54 @@ body.themed-case .frame-showcase:has(.phone-cutout) .eyebrow { color: var(--ink)
 .portfolio-home .portrait-flourish{position:absolute;z-index:0;width:min(125%,620px);height:auto;max-width:none;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-8deg);opacity:.14;pointer-events:none;filter:none}
 .portfolio-home .photo-stage .hero-portrait{z-index:1}
 .portfolio-home .ticker-toggle{display:none!important}
+/* Keep the compact player recognizable as a control, including on touch screens. */
+body .dj-deck.is-collapsed {
+  width: 60px !important; height: 60px !important;
+  grid-template-columns: 1fr !important; border-radius: 8px !important;
+  background: #edf0e8; border: 1px solid #789285;
+}
+body .dj-deck.is-collapsed .vinyl-button {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px !important; height: 44px !important; border-radius: 4px;
+  background: transparent; border: 0; cursor: pointer;
+}
+body .dj-deck.is-collapsed .vinyl-disc { flex-shrink: 0; }
+body .dj-deck.is-collapsed:hover { border-color: #963c2d; box-shadow: 0 3px 0 #963c2d; }
+body .vinyl-button:focus-visible { outline: 3px solid #963c2d; outline-offset: 3px; }
+body .vinyl-button { position: relative; overflow: visible; }
+body .record-status {
+  position: absolute; bottom: -3px; right: -3px; z-index: 2;
+  display: grid; place-items: center; width: 18px; height: 18px;
+  background: #203e36; color: #fff6ed; border: 1px solid #edf0e8;
+  border-radius: 50%; font: 8px/1 Arial, sans-serif; pointer-events: none;
+}
+body .record-notes { position: absolute; inset: 0; pointer-events: none; }
+body .record-notes > span {
+  position: absolute; top: 0; left: 50%; opacity: 0; color: #963c2d;
+  font: 18px/1 Georgia, serif; animation: record-note-rise 3.6s ease-out infinite;
+  animation-play-state: paused;
+}
+body .record-notes > span:nth-child(2) { left: 65%; animation-delay: 1.2s; }
+body .record-notes > span:nth-child(3) { left: 35%; animation-delay: 2.4s; }
+body .dj-deck.audio-active .record-notes > span { animation-play-state: running; }
+body .dj-deck:not(.audio-active) .record-notes { visibility: hidden; }
+body .dj-deck .vinyl-disc { animation: vinylSpin 3s linear infinite !important; animation-play-state: paused !important; }
+body .dj-deck.audio-active .vinyl-disc { animation-play-state: running !important; }
+body .dj-deck .dj-controls .track-progress {
+  display: grid; grid-template-columns: 34px minmax(0,1fr) 34px;
+  align-items: center; gap: 8px; width: 100%; margin-top: 8px;
+}
+body .track-progress span { color: #203e36; font: 11px/1.4 'DM Sans', sans-serif; font-variant-numeric: tabular-nums; }
+body .track-progress input { width: 100%; min-width: 0; cursor: pointer; }
+@keyframes record-note-rise {
+  0% { opacity: 0; transform: translate(0, 0) rotate(-8deg); }
+  25% { opacity: .35; }
+  100% { opacity: 0; transform: translate(16px, -52px) rotate(12deg); }
+}
+@media(prefers-reduced-motion:reduce) {
+  body .record-notes { display: none; }
+  body .dj-deck.audio-active .vinyl-disc { animation: none !important; }
+}
 /* Preserve original UI screenshots while allowing visitors to browse all supplied frames. */
 .case-page .frame-showcase .frame-rail{display:flex!important;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;align-items:flex-start;padding:12px 4px 28px;scrollbar-width:thin}
 .case-page .frame-showcase .device-card{flex:0 0 clamp(230px,27vw,330px);min-width:0;margin-top:0!important;scroll-snap-align:start}

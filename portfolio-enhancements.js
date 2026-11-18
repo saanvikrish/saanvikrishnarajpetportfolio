@@ -102,6 +102,70 @@
     frame.append(img);
     img.closest('.zine-screen')?.classList.add('phone-composition');
   });
+  const record = document.querySelector('#vinylToggle');
+  if (record) {
+    const audio = document.querySelector('#siteTrack');
+    const deck = record.closest('.dj-deck');
+    const badge = document.createElement('span');
+    badge.className = 'record-status';
+    badge.setAttribute('aria-hidden', 'true');
+    record.append(badge);
+    const notes = document.createElement('span');
+    notes.className = 'record-notes';
+    notes.setAttribute('aria-hidden', 'true');
+    for (const symbol of ['\u266a', '\u266b', '\u266a']) {
+      const note = document.createElement('span');
+      note.textContent = symbol;
+      notes.append(note);
+    }
+    record.append(notes);
+    const syncRecord = () => {
+      const playing = audio && !audio.paused && !audio.ended;
+      if (deck.classList.contains('audio-active') !== Boolean(playing)) {
+        deck.classList.toggle('audio-active', Boolean(playing));
+      }
+      badge.textContent = playing ? '\u275a\u275a' : '\u25b6';
+      const label = deck.classList.contains('is-collapsed')
+        ? 'Open music controls' : playing ? 'Pause music' : 'Play music';
+      record.title = label;
+      record.setAttribute('aria-label', label);
+    };
+    if (audio) {
+      for (const event of ['play', 'pause', 'ended', 'emptied', 'error']) audio.addEventListener(event, syncRecord);
+      const progress = document.createElement('label');
+      progress.className = 'track-progress';
+      const elapsed = document.createElement('span');
+      const seek = document.createElement('input');
+      seek.type = 'range'; seek.min = '0'; seek.max = '100'; seek.step = '0.1';
+      seek.value = '0'; seek.disabled = true;
+      seek.setAttribute('aria-label', 'Song position');
+      const duration = document.createElement('span');
+      const format = seconds => {
+        const value = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
+        return Math.floor(value / 60) + ':' + String(value % 60).padStart(2, '0');
+      };
+      const syncProgress = () => {
+        const valid = Number.isFinite(audio.duration) && audio.duration > 0;
+        seek.disabled = !valid;
+        seek.max = valid ? String(audio.duration) : '100';
+        seek.value = valid ? String(audio.currentTime) : '0';
+        elapsed.textContent = format(audio.currentTime);
+        duration.textContent = format(audio.duration);
+        seek.setAttribute('aria-valuetext', format(audio.currentTime) + ' of ' + format(audio.duration));
+      };
+      seek.addEventListener('input', () => {
+        if (!seek.disabled) audio.currentTime = Number(seek.value);
+        syncProgress();
+      });
+      for (const event of ['timeupdate', 'durationchange', 'loadedmetadata', 'emptied']) audio.addEventListener(event, syncProgress);
+      progress.append(elapsed, seek, duration);
+      deck.querySelector('.dj-controls')?.append(progress);
+      syncProgress();
+    }
+    record.addEventListener('click', syncRecord);
+    document.querySelector('#djHideToggle')?.addEventListener('click', syncRecord);
+    syncRecord();
+  }
   if (true) { // Keep music compact on first load at every screen size.
     const deck=document.querySelector('.dj-deck'),toggle=document.querySelector('#djHideToggle');
     deck?.classList.add('is-collapsed');
