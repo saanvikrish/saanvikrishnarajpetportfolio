@@ -1,5 +1,5 @@
 /* A quiet editorial divider instead of a second moving focal point. */
-.portfolio-home .practice-strip { padding: 26px 24px; border: 0; background: #edf0e8; }
+.portfolio-home .practice-strip { padding: 26px 24px; border: 0; background: #efc4b4; }
 .portfolio-home .ticker-window { overflow: visible; }
 .portfolio-home .ticker-track { display: block; width: 100%; transform: none !important; animation: none !important; }
 .portfolio-home .ticker-group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 24px; width: 100%; max-width: 960px; margin: auto; padding: 0; }
@@ -45,6 +45,59 @@
 .portfolio-home .project-links a:focus-visible,
 .portfolio-home .case-cover:focus-visible { outline: 3px solid #efb9a7; outline-offset: 5px; }
 .portfolio-home .project-links a[href^="projects/"]:hover { background: #fff6ed; border-color: #fff6ed; color: #173f37; }
+/* Give the outreach gallery its own header row and consistent image frames. */
+body.theme-clac .tabling-strip-block {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px; width: 100%; max-width: none; padding: 28px;
+  margin-top: 32px; border: 0; background: #e5eadf;
+  color: #203e36; box-sizing: border-box;
+}
+body.theme-clac .tabling-strip-heading {
+  display: block; margin: 0; min-width: 0;
+}
+body.theme-clac .tabling-strip-heading h3 {
+  margin: 0 0 8px; color: #963c2d; font-size: 26px;
+  line-height: 1.2; letter-spacing: 0; text-transform: none;
+}
+body.theme-clac .tabling-strip-heading p {
+  max-width: none; color: #203e36; font-size: 16px; font-weight: 500;
+  line-height: 1.5; text-align: left; text-transform: none; margin: 0;
+}
+body.theme-clac .tabling-strip-block .screen-rail-controls {
+  align-self: end; margin: 0; gap: 8px;
+}
+body.theme-clac .tabling-strip-block .screen-rail-controls button {
+  width: 44px; height: 44px; flex: 0 0 44px; font-size: 24px;
+}
+body.theme-clac .tabling-strip-block .tabling-rail {
+  grid-column: 1 / -1; gap: 20px; padding: 0 0 12px;
+  align-items: start; scrollbar-color: #789285 #e5eadf;
+}
+body.theme-clac .tabling-strip-block .tabling-rail > figure {
+  flex: 0 0 calc((100% - 40px) / 3); width: auto; max-width: none;
+  padding: 0; margin: 0; background: transparent; box-shadow: none;
+}
+body.theme-clac .tabling-strip-block .tabling-rail button {
+  width: 100%; height: auto; aspect-ratio: 4 / 3; border: 0;
+  border-radius: 4px; box-shadow: none; background: #d5ded2;
+}
+body.theme-clac .tabling-strip-block .tabling-rail img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+}
+body.theme-clac .tabling-strip-block .tabling-rail figcaption {
+  max-width: none; margin: 12px 0 0; padding: 0;
+  color: #203e36; font: 500 16px/1.5 'DM Sans', sans-serif;
+  letter-spacing: 0; overflow-wrap: break-word;
+}
+@media(max-width:900px) {
+  body.theme-clac .tabling-strip-block .tabling-rail > figure { flex-basis: 70%; }
+}
+@media(max-width:600px) {
+  body.theme-clac .tabling-strip-block { padding: 20px; gap: 18px 12px; }
+  body.theme-clac .tabling-strip-heading { grid-column: 1 / -1; }
+  body.theme-clac .tabling-strip-block .screen-rail-controls { grid-column: 1 / -1; justify-content: flex-start; }
+  body.theme-clac .tabling-strip-block .tabling-rail > figure { flex-basis: 86%; }
+}
 /* Final, scoped corrections for the contact and case-study layouts. */
 .portfolio-home .contact-copy h2 {
   font-family: 'Billa Mount', cursive !important;
